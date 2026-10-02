@@ -1,0 +1,22 @@
+import { Router } from 'express';
+import {
+  getCategories,
+  getMarket,
+  getProducts,
+  getPromos,
+  getRecommendations,
+  getReviews,
+  getStores,
+} from '../controllers/marketController.js';
+
+const router = Router();
+
+router.get('/market', getMarket);
+router.get('/categories', getCategories);
+router.get('/stores', getStores);
+router.get('/products', getProducts);
+router.get('/promos', getPromos);
+router.get('/reviews', getReviews);
+router.get('/recommendations', getRecommendations);
+
+export default router;

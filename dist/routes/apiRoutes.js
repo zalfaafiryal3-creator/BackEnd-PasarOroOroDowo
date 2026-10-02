@@ -1,0 +1,13 @@
+import { Router } from 'express';
+import homeRoutes from '../pages/Home/HomeRoutes.js';
+import promoRoutes from '../pages/Promo/PromoRoutes.js';
+import rekomendasiRoutes from '../pages/Rekomendasi/RekomendasiRoutes.js';
+import reviewPasarRoutes from '../pages/ReviewPasar/ReviewPasarRoutes.js';
+import tokoRoutes from '../pages/Toko/TokoRoutes.js';
+const router = Router();
+router.use(homeRoutes);
+router.use(tokoRoutes);
+router.use(promoRoutes);
+router.use(reviewPasarRoutes);
+router.use(rekomendasiRoutes);
+export default router;
