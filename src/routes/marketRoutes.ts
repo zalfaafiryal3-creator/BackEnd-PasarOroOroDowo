@@ -1,4 +1,5 @@
 import { Router } from 'express';
+
 import {
   getCategories,
   getMarket,
@@ -13,6 +14,11 @@ import {
   getStores,
 } from '../controllers/marketController.js';
 
+import {
+  getStoreReviewsController,
+  postStoreReview,
+} from '../controllers/storeReviewController.js';
+
 const router = Router();
 
 router.get('/market', getMarket);
@@ -20,10 +26,15 @@ router.get('/categories', getCategories);
 router.get('/stores', getStores);
 router.get('/products', getProducts);
 router.get('/promos', getPromos);
+
 router.get('/reviews', getReviews);
 router.get('/reviews/summary', getReviewsSummary);
 router.post('/reviews', postReview);
 router.post('/reviews/:id/helpful', postReviewHelpful);
+
+router.get('/store-reviews', getStoreReviewsController);
+router.post('/store-reviews', postStoreReview);
+
 router.get('/store-details', getStoreDetailsController);
 router.get('/recommendations', getRecommendations);
 
